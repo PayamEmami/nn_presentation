@@ -1,0 +1,268 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html#linear-regression",
+    "href": "index.html#linear-regression",
+    "title": "Introduction to Neural Networks",
+    "section": "Linear regression",
+    "text": "Linear regression\n\n\n\nCan we model this using linear regression?"
+  },
+  {
+    "objectID": "index.html#linear-regression-1",
+    "href": "index.html#linear-regression-1",
+    "title": "Introduction to Neural Networks",
+    "section": "Linear regression",
+    "text": "Linear regression\n\n\n\nCan we model this using linear regression?\nYes!\n\\(y = X \\beta\\)\n\\(y\\) = output vector\n\n\\(X\\) = input matrix\n\na column of 1s\na column for \\(x\\)"
+  },
+  {
+    "objectID": "index.html#linear-regression-2",
+    "href": "index.html#linear-regression-2",
+    "title": "Introduction to Neural Networks",
+    "section": "Linear regression 2",
+    "text": "Linear regression 2\n\n\n\nCan we model this using linear regression?"
+  },
+  {
+    "objectID": "index.html#linear-regression-2-1",
+    "href": "index.html#linear-regression-2-1",
+    "title": "Introduction to Neural Networks",
+    "section": "Linear regression 2",
+    "text": "Linear regression 2\n\n\n\nCan we model this using linear regression?\nYes!\n\\(y = X \\beta\\)\n\\(y\\) = output vector\n\n\\(X\\) = input matrix\n\na column of 1s\na column for \\(x^2\\)"
+  },
+  {
+    "objectID": "index.html#linear-regression-3",
+    "href": "index.html#linear-regression-3",
+    "title": "Introduction to Neural Networks",
+    "section": "Linear regression 3",
+    "text": "Linear regression 3\n\n\n\nCan we model this using linear regression?"
+  },
+  {
+    "objectID": "index.html#linear-regression-3-1",
+    "href": "index.html#linear-regression-3-1",
+    "title": "Introduction to Neural Networks",
+    "section": "Linear regression 3",
+    "text": "Linear regression 3\n\n\n\nCan we model this using linear regression?\nYes!\n\\(y = X \\beta\\)\n\\(y\\) = output vector\n\n\\(X\\) = input matrix\n\na column of 1s\n\na column for \\(\\sin(2\\pi x)\\)\n\na column for \\(\\sin(4\\pi x)\\)"
+  },
+  {
+    "objectID": "index.html#linear-regression-4",
+    "href": "index.html#linear-regression-4",
+    "title": "Introduction to Neural Networks",
+    "section": "Linear regression 4",
+    "text": "Linear regression 4\n\n\n\nCan we model this using linear regression?"
+  },
+  {
+    "objectID": "index.html#linear-regression-4-1",
+    "href": "index.html#linear-regression-4-1",
+    "title": "Introduction to Neural Networks",
+    "section": "Linear regression 4",
+    "text": "Linear regression 4\n\n\n\nCan we model this using linear regression?\nYes!\n\\(y = X \\beta\\)\n\\(y\\) = output vector\n\n\\(X\\) = input matrix\n\na column of 1s\n\na column for \\(x\\)\n\na column for \\(x^2\\)\n\na column for \\(x^3\\)\n\na column for \\(\\sin(5x)\\)"
+  },
+  {
+    "objectID": "index.html#what-happened",
+    "href": "index.html#what-happened",
+    "title": "Introduction to Neural Networks",
+    "section": "What happened?",
+    "text": "What happened?\n\n\nWe added nonlinear transformations of the input (\\(x^2\\), \\(x^3\\), \\(\\sin(5x)\\))\n\nBut the model is still a linear model\n\nWhy? Because it is linear in the parameters (\\(\\beta\\))\n\nThe formula is still: \\(y = X \\beta\\)\n\n\nThis is just feature engineering\n\nWe create new features from \\(x\\)\n\nThe model fits a linear combination of these new features"
+  },
+  {
+    "objectID": "index.html#what-happened-1",
+    "href": "index.html#what-happened-1",
+    "title": "Introduction to Neural Networks",
+    "section": "What happened?",
+    "text": "What happened?\n\nAll these transformations ONLY create new \\(X\\) such that this new \\(X\\) is linear with respect to the parameters \\(\\beta\\), not the original input \\(x\\)."
+  },
+  {
+    "objectID": "index.html#if-we-had-magical-knowledge",
+    "href": "index.html#if-we-had-magical-knowledge",
+    "title": "Introduction to Neural Networks",
+    "section": "If We Had Magical Knowledge…",
+    "text": "If We Had Magical Knowledge…\n\n\nWe could create the perfect set of features from \\(input\\)\nAnd model ANY relationship between input and output no matter how complex it is!!"
+  },
+  {
+    "objectID": "index.html#but-we-dont",
+    "href": "index.html#but-we-dont",
+    "title": "Introduction to Neural Networks",
+    "section": "But we don’t",
+    "text": "But we don’t\n\n\nSadly we don’t know the true function behind the data\n\nSo we have to guess the right transformations\n\nOr create algorithms that can learn the right features/transformations for us"
+  },
+  {
+    "objectID": "index.html#lets-design-one",
+    "href": "index.html#lets-design-one",
+    "title": "Introduction to Neural Networks",
+    "section": "Let’s design one",
+    "text": "Let’s design one\n\nOur linear regression might look like this:\n\n\n\n\n%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '30px', 'fontFamily': 'Inter'}}}%%\n\ngraph LR\n  %% Input node\n  X1([\"$$x_1$$\"])\n\n  %% Output node\n  Y([\"$$\\hat{y} = w_1 x_1 + b$$\"])\n\n  %% Connection with weight label\n  X1 -- \"$$w_1$$\" --&gt; Y\n  \n  \n\n\n\n\n\nIf we had more features\n\n\n\n\n%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '30px', 'fontFamily': 'Inter'}}}%%\n\ngraph LR\n  %% Input node\n  X1([\"$$x_1$$\"])\n  X2([\"$$x_2$$\"])\n  X3([\"$$x_3$$\"])\n  X4([\"$$x_4$$\"])\n\n  %% Output node\n  Y([\"$$\\hat{y} = WX + b$$\"])\n\n  %% Connection with weight label\n  X1 -- \"$$w_1$$\" --&gt; Y\n  X2 -- \"$$w_2$$\" --&gt; Y\n  X3 -- \"$$w_3$$\" --&gt; Y\n  X4 -- \"$$w_4$$\" --&gt; Y"
+  },
+  {
+    "objectID": "index.html#lets-design-one-1",
+    "href": "index.html#lets-design-one-1",
+    "title": "Introduction to Neural Networks",
+    "section": "Let’s design one",
+    "text": "Let’s design one\n\nOur magical feature engineer is now called \\(f\\)Remember, we are still doing linear regression at the end but on the new feature!\n\n\n\n\n%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '30px', 'fontFamily': 'Inter'}}}%%\n\n%%{init: {\"theme\": \"default\", \"themeVariables\": { \"fontSize\": \"24px\" }}}%%\n\ngraph LR\n  %% Input nodes\n  X1([\"$$x_1$$\"])\n  X2([\"$$x_2$$\"])\n  X3([\"$$x_3$$\"])\n  X4([\"$$x_4$$\"])\n\n  %% Hidden unit with color (middle unit)\n  A1([\"$$f$$\"])\n  style A1 fill:#d2e3f5,stroke:#2b6cb0,stroke-width:2px\n\n  %% Output node\n  Y([\"$$\\hat{y} = w \\text{new feature} + b$$\"])\n\n  %% Edges from inputs to hidden unit\n  X1 ----&gt; A1\n  X2 ----&gt; A1\n  X3 ----&gt; A1\n  X4 ----&gt; A1\n\n  %% Edge from hidden unit to output\n  A1 -- \"new feature\" --&gt; Y"
+  },
+  {
+    "objectID": "index.html#example",
+    "href": "index.html#example",
+    "title": "Introduction to Neural Networks",
+    "section": "Example",
+    "text": "Example\n\n\n\n\n\n\n\n%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '30px', 'fontFamily': 'Inter'}}}%%\n\n%%{init: {\"theme\": \"default\", \"themeVariables\": { \"fontSize\": \"24px\" }}}%%\n\ngraph LR\n  %% Input nodes\n  X1([\"$$x_1$$\"])\n  %% Hidden unit with color (middle unit)\n  A1([\"$$a = x^2$$\"])\n  style A1 fill:#d2e3f5,stroke:#2b6cb0,stroke-width:2px\n\n  %% Output node\n  Y([\"$$\\hat{y} = w_a x^2 + b$$\"])\n\n  %% Edges from inputs to hidden unit\n  X1 -- \"$$w_1$$\" --&gt; A1\n\n  %% Edge from hidden unit to output\n  A1 -- \"$$w_a$$\" --&gt; Y"
+  },
+  {
+    "objectID": "index.html#example-1",
+    "href": "index.html#example-1",
+    "title": "Introduction to Neural Networks",
+    "section": "Example",
+    "text": "Example\n\n\n\n\n\n\n\n%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '30px', 'fontFamily': 'Inter'}}}%%\n\n%%{init: {\"theme\": \"default\", \"themeVariables\": { \"fontSize\": \"24px\" }}}%%\n\ngraph LR\n  %% Input nodes\n  X1([\"$$x_1$$\"])\n  %% Hidden unit with color (middle unit)\n  A1([\"$$a = x^2$$\"])\n  style A1 fill:#d2e3f5,stroke:#2b6cb0,stroke-width:2px\n\n  %% Output node\n  Y([\"$$\\hat{y} = w_a x^2 + b$$\"])\n\n  %% Edges from inputs to hidden unit\n  X1 -- \"$$w_1$$\" --&gt; A1\n\n  %% Edge from hidden unit to output\n  A1 -- \"$$w_a$$\" --&gt; Y"
+  },
+  {
+    "objectID": "index.html#how-to-come-up-with-f",
+    "href": "index.html#how-to-come-up-with-f",
+    "title": "Introduction to Neural Networks",
+    "section": "How to come up with \\(f\\)",
+    "text": "How to come up with \\(f\\)\n\n\n\n\n\n\n\n\n\n%%{init: {\"theme\": \"default\", \"themeVariables\": { \"fontSize\": \"24px\" }}}%%\ngraph LR\n  %% Input nodes\n  X1([\"$$x_1$$\"])\n  X2([\"$$x_2$$\"])\n  X3([\"$$x_3$$\"])\n  X4([\"$$x_4$$\"])\n\n  %% Hidden unit with color (middle unit)\n  A1([\"$$f$$\"])\n  style A1 fill:#d2e3f5,stroke:#2b6cb0,stroke-width:2px\n\n  %% Output node\n  Y([\"$$\\hat{y} = w \\text{new feature} + b$$\"])\n\n  %% Edges from inputs to hidden unit\n  X1 ----&gt; A1\n  X2 ----&gt; A1\n  X3 ----&gt; A1\n  X4 ----&gt; A1\n\n  %% Edge from hidden unit to output\n  A1 -- \"new feature\" --&gt; Y"
+  },
+  {
+    "objectID": "index.html#how-to-come-up-with-f-1",
+    "href": "index.html#how-to-come-up-with-f-1",
+    "title": "Introduction to Neural Networks",
+    "section": "How to come up with \\(f\\)",
+    "text": "How to come up with \\(f\\)\n\n\n\nLet’s try something simple: \\[\nf(x) = x_1 w_1 + b\n\\]\nJust using one variable for now\nThen: \\[\n\\hat{y} = w \\cdot f(x) + b'\n\\]\nBut wait…\nIsn’t that just: \\[\n\\hat{y} = w w_1 x_1 + w b + b'\n\\]\nSo we’re back to a linear model!\n\n\n\n\n\n\n\n%%{init: {\"theme\": \"default\", \"themeVariables\": { \"fontSize\": \"24px\" }}}%%\ngraph LR\n  %% Input nodes\n  X1([\"$$x_1$$\"])\n\n  %% Hidden unit with color (middle unit)\n  A1([\"$$f$$\"])\n  style A1 fill:#d2e3f5,stroke:#2b6cb0,stroke-width:2px\n\n  %% Output node\n  Y([\"$$\\hat{y} = w \\text{new feature} + b$$\"])\n\n  %% Edges from inputs to hidden unit\n  X1 ----&gt; A1\n\n  %% Edge from hidden unit to output\n  A1 -- \"new feature\" --&gt; Y"
+  },
+  {
+    "objectID": "index.html#how-to-come-up-with-f-2",
+    "href": "index.html#how-to-come-up-with-f-2",
+    "title": "Introduction to Neural Networks",
+    "section": "How to come up with \\(f\\)",
+    "text": "How to come up with \\(f\\)\n\n\n\nHow about adding a little bit of non-linearity to \\(f\\) \\[\nf(x) = max(0,x_1 w_1 + b)\n\\]\nNow our regression becomes\n\\[\n\\hat{y} = w f(x)  + b'\n\\]\n\n\n\n\n\n\n\n%%{init: {\"theme\": \"default\", \"themeVariables\": { \"fontSize\": \"24px\" }}}%%\ngraph LR\n  %% Input nodes\n  X1([\"$$x_1$$\"])\n\n  %% Hidden unit with color (middle unit)\n  A1([\"$$f$$\"])\n  style A1 fill:#d2e3f5,stroke:#2b6cb0,stroke-width:2px\n\n  %% Output node\n  Y([\"$$\\hat{y} = w \\text{new feature} + b$$\"])\n\n  %% Edges from inputs to hidden unit\n  X1 ----&gt; A1\n\n  %% Edge from hidden unit to output\n  A1 -- \"new feature\" --&gt; Y"
+  },
+  {
+    "objectID": "index.html#our-design-so-far",
+    "href": "index.html#our-design-so-far",
+    "title": "Introduction to Neural Networks",
+    "section": "Our design so far",
+    "text": "Our design so far\n\n\nThis now our machine learning model:\n\nStart with input: \\(x_1\\)\nMultiply by a weight and add bias:\n\\[\nz = w_1 x_1 + b_1\n\\]\nPass through a transformation:\n\\[\na = \\max(0, z)\n\\]\nThis gives us a new internal value: \\(a\\)\nThen compute final output:\n\\[\n\\hat{y} = w_2 a + b_2\n\\]\n\nWe hope that \\(a\\) is a linear representation of our data! But before anything else we need to come up with \\(w\\)\n\n\n\n\n\n\n%%{init: {\"theme\": \"default\", \"themeVariables\": { \"fontSize\": \"24px\" }}}%%\ngraph LR\n  %% Input nodes\n  X1([\"$$x_1$$\"])\n\n  %% Hidden unit with color (middle unit)\n  A1([\"$$a=max(0,w_1 x1 + b_1)$$\"])\n  style A1 fill:#d2e3f5,stroke:#2b6cb0,stroke-width:2px,text-align:right\n\n  %% Output node\n  Y([\"$$\\hat{y} = w_2 a + b_2$$\"])\n\n  %% Edges from inputs to hidden unit\n  X1 -- \"$$w1$$\" --&gt; A1\n\n  %% Edge from hidden unit to output\n  A1 -- \"w2\" --&gt; Y"
+  },
+  {
+    "objectID": "index.html#how-to-come-up-with-f-3",
+    "href": "index.html#how-to-come-up-with-f-3",
+    "title": "Introduction to Neural Networks",
+    "section": "How to come up with \\(f\\)",
+    "text": "How to come up with \\(f\\)\n\n\n\nHow about adding a little bit of non-linearity to \\(f\\) \\[\nf(x) = max(0,x_1 w_1 + b)\n\\]\nNow our regression becomes\n\\[\n\\hat{y} = w f(x)  + b'\n\\]"
+  },
+  {
+    "objectID": "index.html#how-to-fit-our-model-simple-case",
+    "href": "index.html#how-to-fit-our-model-simple-case",
+    "title": "Introduction to Neural Networks",
+    "section": "How to fit our model (simple case)",
+    "text": "How to fit our model (simple case)\n\n\n\nAny machine learning algorithm has a loss function.\n\nIt tells us how wrong our prediction is.\nLet’s say for linear regression we have\n\n\\[\n  \\hat{y}_i = b + w_1 x_i\n\\]\n\nFor linear regression, we usually use:\n\\[\n\\text{Loss} = \\frac{1}{n} \\sum_{i=1}^n (y_i - \\hat{y}_i)^2\n\\]\nThis is called the mean squared error (MSE).\n\nOur goal: minimize this loss by changing parameters in this case \\(b\\) + \\(w_1\\).\n\n\n\n\n\n\n\n%%| mermaid-format: png\n\ngraph LR\n  %% Input node\n  X1([\"$$x_1$$\"])\n\n  %% Output node\n  Y([\"$$\\hat{y} = w_1 x_1 + b$$\"])\n  L([\"$$\\text{Loss} = \\frac{1}{n} \\sum_{i=1}^n (y_i - \\hat{y}_i)^2$$\"])\n  \n\n  %% Connection with weight label\n  X1 -- \"$$w_1$$\" --&gt; Y\n  Y -- \"$$\\hat{y}$$\" --&gt; L"
+  },
+  {
+    "objectID": "index.html#how-to-optimize-w_1",
+    "href": "index.html#how-to-optimize-w_1",
+    "title": "Introduction to Neural Networks",
+    "section": "How to optimize \\(w_1\\)",
+    "text": "How to optimize \\(w_1\\)\n\n\nlet’s start with a random value for \\(w_1\\) and calculate the loss \\[\n  \\text{Loss} = \\frac{1}{n} \\sum_{i=1}^n (y_i - \\hat{y}_i)^2\n\\]\n\\[\n\\text{slope} \\approx \\frac{\\text{Loss}(w_1 + \\varepsilon) - \\text{Loss}(w_1)}{\\varepsilon}\n\\]\nThen:\n\nIf the slope is positive, that means the loss is going up ⇒ decrease \\(w\\) left\nIf the slope is negative, that means the loss is going down ⇒ increase \\(w\\) right\n\n\\[\n\\text{If} \\quad \\frac{\\text{Loss}(1.01) - \\text{Loss}(1)}{0.01} = 5 \\quad \\Rightarrow \\text{decrease w}\n\\]\n\\[\n\\text{If} \\quad \\frac{\\text{Loss}(1.01) - \\text{Loss}(1)}{0.01} = -5 \\quad \\Rightarrow \\text{increase w}\n\\]"
+  },
+  {
+    "objectID": "index.html#gradient-descent",
+    "href": "index.html#gradient-descent",
+    "title": "Introduction to Neural Networks",
+    "section": "Gradient Descent",
+    "text": "Gradient Descent\n\n\nWe want to minimize the loss function:\n\\[\n\\text{Loss} = \\frac{1}{n} \\sum_{i=1}^n (y_i - \\hat{y}_i)^2\n\\]\nFor linear regression:\n\\[\n\\hat{y}_i = \\beta_0 + \\beta_1 x_i\n\\]\nThe gradient of the loss with respect to parameters is:\n\\[\n\\frac{\\partial \\text{Loss}}{\\partial \\beta_0} = \\frac{-2}{n} \\sum_{i=1}^n (y_i - \\hat{y}_i)\n\\]\n\\[\n\\frac{\\partial \\text{Loss}}{\\partial \\beta_1} = \\frac{-2}{n} \\sum_{i=1}^n (y_i - \\hat{y}_i)x_i\n\\]\nWe update parameters in the opposite direction of the gradient: \\[\n\\beta_j \\leftarrow \\beta_j - \\eta \\cdot \\frac{\\partial \\text{Loss}}{\\partial \\beta_j}\n\\] where \\(\\eta\\) is the learning rate.\nKeep doing that until you cannot do better!!"
+  },
+  {
+    "objectID": "index.html#blame-the-hell-out-of-parameters",
+    "href": "index.html#blame-the-hell-out-of-parameters",
+    "title": "Introduction to Neural Networks",
+    "section": "Blame the hell out of parameters!",
+    "text": "Blame the hell out of parameters!\n\nGradient descent is a game of parameter blame.\nImagine we want to optimize \\(w\\)\nLet’s start with our loss:\n\\[\n\\text{Loss} = \\frac{1}{n} \\sum_{i=1}^n (y_i - \\hat{y}_i)^2\n\\]\nWe ask two simple questions:\nWhat’s wrong?\nWho is to blame for it?\nWhat’s wrong?\n\n\\(\\text{Loss}\\) is wrong.\n\n\nWho is to blame for it?\n\n\n\\(\\hat{y_i}\\), our prediction is to blame\nso we write \\[\n\\frac{\\partial \\text{Loss}}{\\partial \\hat{y}_i}\n\\]"
+  },
+  {
+    "objectID": "index.html#blame-the-hell-out-of-parameters-1",
+    "href": "index.html#blame-the-hell-out-of-parameters-1",
+    "title": "Introduction to Neural Networks",
+    "section": "Blame the hell out of parameters!",
+    "text": "Blame the hell out of parameters!\n\nLet’s start with our latest blame!\n\\[\n\\frac{\\partial \\text{Loss}}{\\partial \\hat{y}_i}\n\\] \\(\\hat{y}_i\\) was not alone doing bad!\nWhat’s wrong?\n\n\\(\\hat{y}_i\\) is wrong.\n\n\nWho is to blame for it?\n\n\n\\(w\\) was wrong because we calculate \\(\\hat{y}=wx+b\\)\nso we write \\[\n      \\frac{\\partial \\hat{y}_i}{\\partial w}\n     \\]"
+  },
+  {
+    "objectID": "index.html#putting-it-all-together",
+    "href": "index.html#putting-it-all-together",
+    "title": "Introduction to Neural Networks",
+    "section": "Putting it all together",
+    "text": "Putting it all together\n\nThis is how we calculate the gradient for \\(w\\) \\[\n      \\frac{\\partial \\text{Loss}}{\\partial w}=\\frac{\\partial \\text{Loss}}{\\partial \\hat{y}_i} .\\frac{\\partial \\hat{y}_i}{\\partial w}\n\\] and we can do the same for \\(b\\)\n\\[\n\\frac{\\partial \\text{Loss}}{\\partial b}\n= \\frac{\\partial \\text{Loss}}{\\partial \\hat{y}_i}\n\\cdot \\frac{\\partial \\hat{y}_i}{\\partial b}\n\\]\n\n\n\n\n\n%%{init: {\"theme\": \"default\", \"themeVariables\": { \"fontSize\": \"24px\" }}}%%\ngraph LR\n  %% Input nodes\n  X1([\"$$x_1$$\"])\n\n  %% Hidden unit with color (middle unit)\n  A1([\"$$a=max(0,w_1 x1 + b_1)$$\"])\n  style A1 fill:#d2e3f5,stroke:#2b6cb0,stroke-width:2px,text-align:right\n\n  %% Output node\n  Y([\"$$\\hat{y} = w_2 a + b_2$$\"])\n\n  %% Edges from inputs to hidden unit\n  X1 -- \"$$w1$$\" --&gt; A1\n\n  %% Edge from hidden unit to output\n  A1 -- \"w2\" --&gt; Y\n  \n\n\n\n\n\n\n\n\n\n\n\n%%{init: {\"theme\": \"default\", \"themeVariables\": { \"fontSize\": \"24px\" }}}%%\ngraph LR\n  %% Input nodes\n  X1([\"$$L$$\"])\n  X2([\"$$\\hat{y}$$\"])\n  X3([\"$$w$$\"])\n  %% Edges from inputs to hidden unit\n  X1 -- \" was affected by\" --&gt; X2\n  X2 -- \" was affected by \" --&gt; X3\n\n  \n\n\n\n\n\n\nThis is called the chain rule!"
+  },
+  {
+    "objectID": "index.html#lets-apply-this-to-our-model-with-feature-engineering",
+    "href": "index.html#lets-apply-this-to-our-model-with-feature-engineering",
+    "title": "Introduction to Neural Networks",
+    "section": "Let’s apply this to our model with feature engineering!",
+    "text": "Let’s apply this to our model with feature engineering!\n\n\nThis now our machine learning model:\n\nStart with input: \\(x_1\\)\nMultiply by a weight and add bias:\n\\[\nz = w_1 x_1 + b_1\n\\]\nPass through a transformation:\n\\[\na = \\max(0, z)\n\\]\nThis gives us a new internal value: \\(a\\)\nThen compute final output:\n\\[\n\\hat{y} = w_2 a + b_2\n\\]\n\n\n\n\n\n\n\n%%{init: {\"theme\": \"default\", \"themeVariables\": { \"fontSize\": \"24px\" }}}%%\ngraph LR\n  %% Input nodes\n  X1([\"$$x_1$$\"])\n\n  %% Hidden unit with color (middle unit)\n  A1([\"$$a=max(0,w_1 x1 + b_1)$$\"])\n  style A1 fill:#d2e3f5,stroke:#2b6cb0,stroke-width:2px,text-align:right\n\n  %% Output node\n  Y([\"$$\\hat{y} = w_2 a + b_2$$\"])\n\n  %% Edges from inputs to hidden unit\n  X1 -- \"$$w1$$\" --&gt; A1\n\n  %% Edge from hidden unit to output\n  A1 -- \"w2\" --&gt; Y"
+  },
+  {
+    "objectID": "index.html#lets-apply-this-to-our-model-with-feature-engineering-1",
+    "href": "index.html#lets-apply-this-to-our-model-with-feature-engineering-1",
+    "title": "Introduction to Neural Networks",
+    "section": "Let’s apply this to our model with feature engineering!",
+    "text": "Let’s apply this to our model with feature engineering!\n\n\n\n\n\n\n%%{init: {\"theme\": \"default\", \"themeVariables\": { \"fontSize\": \"24px\" }}}%%\ngraph LR\n  %% Input nodes\n  X1([\"$$x_1$$\"])\n\n  %% Hidden unit with color (middle unit)\n  A1([\"$$a=max(0,z_1=w_1 x1 + b_1)$$\"])\n  style A1 fill:#d2e3f5,stroke:#2b6cb0,stroke-width:2px,text-align:right\n\n  %% Output node\n  Y([\"$$\\hat{y} = w_2 a + b_2$$\"])\n\n  %% Edges from inputs to hidden unit\n  X1 -- \"$$w1$$\" --&gt; A1\n\n  %% Edge from hidden unit to output\n  A1 -- \"w2\" --&gt; Y\n  \n\n\n\n\n\n\n\n\n\n\n\n\n%%{init: {\"theme\": \"default\", \"themeVariables\": { \"fontSize\": \"24px\" }}}%%\ngraph LR\n  %% Input nodes\n  X1([\"$$L$$\"])\n  X2([\"$$\\hat{y}$$\"])\n  X3([\"$$w_2$$\"])\n  %% Edges from inputs to hidden unit\n  X1 -- \" was affected by\" --&gt; X2\n  X2 -- \" was affected by \" --&gt; X3\n\n  \n\n\n\n\n\n\n\n\n\n\n\n%%{init: {\"theme\": \"default\", \"themeVariables\": { \"fontSize\": \"24px\" }}}%%\ngraph LR\n  %% Input nodes\n  X1([\"$$L$$\"])\n  X2([\"$$\\hat{y}$$\"])\n  X3([\"$$b_2$$\"])\n  %% Edges from inputs to hidden unit\n  X1 -- \" was affected by\" --&gt; X2\n  X2 -- \" was affected by \" --&gt; X3\n\n  \n\n\n\n\n\n\nSo we have \\(\\frac{\\partial \\text{Loss}}{\\partial w_2} = \\frac{\\partial \\text{Loss}}{\\partial \\hat{y}} \\cdot \\frac{\\partial \\hat{y}}{\\partial w_2}\\) and \\(\\frac{\\partial \\text{Loss}}{\\partial b_2} = \\frac{\\partial \\text{Loss}}{\\partial \\hat{y}} \\cdot \\frac{\\partial \\hat{y}}{\\partial b_2}\\)\n\nNow for \\(w_1\\).\n\n\n\n\n\n%%{init: {\"theme\": \"default\", \"themeVariables\": { \"fontSize\": \"24px\" }}}%%\ngraph LR\n  %% Input nodes\n  X1([\"$$L$$\"])\n  X2([\"$$\\hat{y}$$\"])\n  X3([\"$$a$$\"])\n  X4([\"$$z_1$$\"])\n  X5([\"$$w_1$$\"])\n  %% Edges from inputs to hidden unit\n  X1 -- \" was affected by\" --&gt; X2\n  X2 -- \" was affected by \" --&gt; X3\n  X3 -- \" was affected by \" --&gt; X4\n  X4 -- \" was affected by \" --&gt; X5\n\n\n\n\n\n\n\nSo our gradient for \\(w_1\\) is \\(\\frac{\\partial \\text{Loss}}{\\partial w_1} = \\frac{\\partial \\text{Loss}}{\\partial \\hat{y}} \\cdot \\frac{\\partial \\hat{y}}{\\partial a} \\cdot \\frac{\\partial a}{\\partial z_1} \\cdot \\frac{\\partial z_1}{\\partial w_1}\\)"
+  },
+  {
+    "objectID": "index.html#summing-up-so-far",
+    "href": "index.html#summing-up-so-far",
+    "title": "Introduction to Neural Networks",
+    "section": "Summing up so far",
+    "text": "Summing up so far\n\n\n\nWe define a machine learning model that helps us engineer features so we can do linear models to get a good fit\n\n\n\n\n\n\n%%{init: {\"theme\": \"default\", \"themeVariables\": { \"fontSize\": \"24px\" }}}%%\ngraph LR\n  %% Input nodes\n  X1([\"$$x_1$$\"])\n\n  %% Hidden unit with color (middle unit)\n  A1([\"$$a=max(0,z_1=w_1 x1 + b_1)$$\"])\n  style A1 fill:#d2e3f5,stroke:#2b6cb0,stroke-width:2px,text-align:right\n\n  %% Output node\n  Y([\"$$\\hat{y} = w_2 a + b_2$$\"])\n\n  %% Edges from inputs to hidden unit\n  X1 -- \"$$w1$$\" --&gt; A1\n\n  %% Edge from hidden unit to output\n  A1 -- \"w2\" --&gt; Y\n  \n\n\n\n\n\n\n\n\n\nWe can use gradients to see the effect of all the parameters such as \\(w\\) and \\(b\\) on our accuracy \\[\n\\frac{\\partial \\text{Loss}}{\\partial w_1} = \\frac{\\partial \\text{Loss}}{\\partial \\hat{y}} \\cdot \\frac{\\partial \\hat{y}}{\\partial a} \\cdot \\frac{\\partial a}{\\partial z_1} \\cdot \\frac{\\partial z_1}{\\partial w_1}\n\\]\n\n\n\n\nWe now know a mean to update the weights using gradient decend\n\n\\[\n  w_j \\leftarrow w_j - \\eta \\cdot \\frac{\\partial \\text{Loss}}{\\partial w_j}\n\\]"
+  },
+  {
+    "objectID": "index.html#how-to-fit-this-model",
+    "href": "index.html#how-to-fit-this-model",
+    "title": "Introduction to Neural Networks",
+    "section": "How to fit this model",
+    "text": "How to fit this model\n\n\n\n\n\n\n\n%%{init: {\"theme\": \"default\", \"themeVariables\": { \"fontSize\": \"24px\" }}}%%\ngraph LR\n  %% Input nodes\n  X1([\"$$x_1$$\"])\n\n  %% Hidden unit with color (middle unit)\n  A1([\"$$a=max(0,z_1=w_1 x1 + b_1)$$\"])\n  style A1 fill:#d2e3f5,stroke:#2b6cb0,stroke-width:2px,text-align:right\n\n  %% Output node\n  Y([\"$$\\hat{y} = w_2 a + b_2$$\"])\n\n  %% Edges from inputs to hidden unit\n  X1 -- \"$$w1$$\" --&gt; A1\n\n  %% Edge from hidden unit to output\n  A1 -- \"w2\" --&gt; Y\n  \n\n\n\n\n\n\n\n\n\nInitialize the parameters to something random and pick a learning rate\n\n\n\n\nRun the model (do all the calculations) to get \\(Loss\\). This is called forward pass\n\n\n\n\nCalculate gradient for all the parameters \\[\n\\frac{\\partial \\text{Loss}}{\\partial w_1} = \\frac{\\partial \\text{Loss}}{\\partial \\hat{y}} \\cdot \\frac{\\partial \\hat{y}}{\\partial a} \\cdot \\frac{\\partial a}{\\partial z_1} \\cdot \\frac{\\partial z_1}{\\partial w_1}\n\\]\n\n\n\nUpdate all the parameters using\n\\[\n  w_j \\leftarrow w_j - \\eta \\cdot \\frac{\\partial \\text{Loss}}{\\partial w_j}\n\\] This is called backward pass\n\n\nKeep going until you cannot make the \\(Loss\\) smaller! This is your simple neural network!"
+  },
+  {
+    "objectID": "index.html#what-is-a-neural-network",
+    "href": "index.html#what-is-a-neural-network",
+    "title": "Introduction to Neural Networks",
+    "section": "What is a Neural Network?",
+    "text": "What is a Neural Network?\n\n\n\nA neural network is just a fancy function approximator or feature engineering machine.\n\nIt’s made by stacking layers of tiny models.\n\nEach unit does the same thing:\n\nTake a weighted sum\n\nAdd a bias\n\nApply a non-linear function (like ReLU)\n\n\nTogether, they can model very complex curves.\n\nFormally, a simple one-hidden-layer neural network looks like:\n\\[\n\\hat{y} = w_2 \\cdot \\text{ReLU}(w_1 x_1 + b_1) + b_2\n\\]\nIt’s still made of linear parts! We just hide them inside activations!\n\n\n\n\n\n\n\n%%{init: {\"theme\": \"default\", \"themeVariables\": { \"fontSize\": \"24px\" }}}%%\ngraph LR\n  %% Input nodes\n  X1([\"$$x_1$$\"])\n\n  %% Hidden unit with color (middle unit)\n  A1([\"$$a=max(0,w_1 x1 + b_1)$$\"])\n  style A1 fill:#d2e3f5,stroke:#2b6cb0,stroke-width:2px,text-align:right\n\n  %% Output node\n  Y([\"$$\\hat{y} = w_2 a + b_2$$\"])\n\n  %% Edges from inputs to hidden unit\n  X1 -- \"$$w1$$\" --&gt; A1\n\n  %% Edge from hidden unit to output\n  A1 -- \"w2\" --&gt; Y"
+  },
+  {
+    "objectID": "index.html#in-practice-many-choices",
+    "href": "index.html#in-practice-many-choices",
+    "title": "Introduction to Neural Networks",
+    "section": "In Practice: Many Choices",
+    "text": "In Practice: Many Choices\n\n\nNeural networks come with many choices:\nActivation functions:\n\nReLU: \\(\\max(0, x)\\)\nSigmoid: \\(\\frac{1}{1 + e^{-x}}\\)\nTanh: \\(\\tanh(x)\\)\nGELU, Leaky ReLU, Swish…\n\nLoss functions:\n\nMSE (regression)\nCross-entropy (classification)\nContrastive\n\nArchitectures:\n\nFully connected (MLP)\nCNN (images)\nRNN, LSTM, GRU (sequences)\nTransformers (language & more)"
+  },
+  {
+    "objectID": "index.html#example-neural-network-for-regression-in-r",
+    "href": "index.html#example-neural-network-for-regression-in-r",
+    "title": "Introduction to Neural Networks",
+    "section": "Example: Neural Network for Regression in R",
+    "text": "Example: Neural Network for Regression in R\n\n\nWe’ll use the keras package to fit a small neural network.\nTask: Predict \\(y = x^2\\) from noisy observations.\nModel: - 1 hidden layer with ReLU - MSE loss - Optimizer: SGD\nlibrary(keras)\nset.seed(123)\n# Prepare data for keras\nx_train &lt;- matrix(x, ncol = 1)\ny_train &lt;- matrix(y, ncol = 1)\n\n# Build model\nmodel &lt;- keras_model_sequential() %&gt;%\n  layer_dense(units = 10, activation = \"relu\", input_shape = 1) %&gt;%\n  layer_dense(units = 1)\n\n# Compile and fit\nmodel %&gt;% compile(\n  loss = \"mse\",\n  optimizer = optimizer_sgd(learning_rate = 0.05)\n)\n\nmodel %&gt;% fit(x_train, y_train, epochs = 100, verbose = 0)\n\n# Predict and plot\ny_pred &lt;- model %&gt;% predict(x_train)\n\n\n\n\n\n\n\n\n\n\nModel: \"sequential\"\n________________________________________________________________________________\n Layer (type)                       Output Shape                    Param #     \n================================================================================\n dense_1 (Dense)                    (None, 10)                      20          \n dense (Dense)                      (None, 1)                       11          \n================================================================================\nTotal params: 31\nTrainable params: 31\nNon-trainable params: 0\n________________________________________________________________________________"
+  },
+  {
+    "objectID": "index.html#example-neural-network-for-regression-in-r-1",
+    "href": "index.html#example-neural-network-for-regression-in-r-1",
+    "title": "Introduction to Neural Networks",
+    "section": "Example: Neural Network for Regression in R",
+    "text": "Example: Neural Network for Regression in R\n\n\nWe’ll use the keras package to fit a small neural network.\nTask: Predict \\(y =  sin(2 * pi * x) + 0.5 * sin(4 * pi * x)\\) from noisy observations.\nlibrary(keras)\nset.seed(123)\n# Prepare data for keras\nx_train &lt;- matrix(x, ncol = 1)\ny_train &lt;- matrix(y, ncol = 1)\n\n# Build model\nmodel &lt;- keras_model_sequential() %&gt;%\n  layer_dense(units = 64, activation = \"relu\", input_shape = 1) |&gt;\n  layer_dense(units = 64, activation = \"relu\") |&gt;\n  layer_dense(units = 1)\n\n# Compile and fit\nmodel %&gt;% compile(optimizer = optimizer_adam(learning_rate = 1e-3), loss = \"mse\")\n\nmodel %&gt;% fit(x_train, y_train, epochs = 500, verbose = 0)\n\n# Predict and plot\ny_pred &lt;- model %&gt;% predict(x_train)\n\n\n\n\n\n\n\n\n\n\nModel: \"sequential_1\"\n________________________________________________________________________________\n Layer (type)                       Output Shape                    Param #     \n================================================================================\n dense_5 (Dense)                    (None, 64)                      128         \n dense_4 (Dense)                    (None, 64)                      4160        \n dense_3 (Dense)                    (None, 64)                      4160        \n dense_2 (Dense)                    (None, 1)                       65          \n================================================================================\nTotal params: 8,513\nTrainable params: 8,513\nNon-trainable params: 0\n________________________________________________________________________________"
+  },
+  {
+    "objectID": "index.html#example-pca-using-neural-networks",
+    "href": "index.html#example-pca-using-neural-networks",
+    "title": "Introduction to Neural Networks",
+    "section": "Example: PCA using neural networks",
+    "text": "Example: PCA using neural networks\n\n\nWe’ll use the keras package to do a PCA\nlibrary(keras)\nlibrary(mixOmics)\ndata(\"nutrimouse\")\nset.seed(42)\nX &lt;- nutrimouse$gene\n\n# Normalize the data\nX_scaled &lt;- scale(X)\n\nn_input &lt;- ncol(X_scaled)\nn_pcs &lt;- 2  # Number of components (like nPcs)\n\n# Build encoder\nencoder &lt;- keras_model_sequential()  %&gt;%\n  layer_dense(units = n_pcs, activation = \"linear\", input_shape = n_input)\n\n# Build decoder\ndecoder &lt;- keras_model_sequential() %&gt;%\n  layer_dense(units = n_input, activation = \"linear\", input_shape = n_pcs)\n\n# Connect into autoencoder\ninput &lt;- layer_input(shape = n_input)\nencoded &lt;- encoder(input)\ndecoded &lt;- decoder(encoded)\n\nautoencoder &lt;- keras_model(input, decoded)\n\n# Compile\nautoencoder %&gt;% compile(\n  optimizer = optimizer_adam(learning_rate = 0.05),\n  loss = \"mse\"\n)\n\n# Train\nautoencoder %&gt;% fit(\n  X_scaled, X_scaled,\n  epochs = 200,\n  batch_size = 32,\n  verbose = 0\n)\n\n# Extract the \"scores\" (PCs)\nscores &lt;- predict(encoder, X_scaled)\n\n\n\n\n\n\n\n\n\n\nModel: \"model\"\n________________________________________________________________________________\n Layer (type)                       Output Shape                    Param #     \n================================================================================\n input_1 (InputLayer)               [(None, 120)]                   0           \n sequential (Sequential)            (None, 2)                       242         \n sequential_1 (Sequential)          (None, 120)                     360         \n================================================================================\nTotal params: 602\nTrainable params: 602\nNon-trainable params: 0\n________________________________________________________________________________"
+  },
+  {
+    "objectID": "index.html#final-tips-architecture-training-choices",
+    "href": "index.html#final-tips-architecture-training-choices",
+    "title": "Introduction to Neural Networks",
+    "section": "Final Tips: Architecture & Training Choices",
+    "text": "Final Tips: Architecture & Training Choices\n\n\nHow many layers?\n\nStart small: 1–3 hidden layers is often enough\nMore layers = more abstraction, but also more training trouble\n\nHow many neurons per layer?\n\nTry 16–128 per layer\nToo few = underfitting\n\nToo many = overfitting / slow\n\nWhich activation?\n\nReLU = default for deep nets\n\nTanh = smooth regression\n\nSoftmax = classification\n\nNever use activation after last layer if you’re predicting a number (regression)\n\n\nWhich optimizer?\n\nadam: works well 90% of the time\n\nsgd: good for theory, but slow\n\nrmsprop: good for RNNs\n\nWhat not to do:\n\nDon’t add activation = \"relu\" in the output layer of a regression\nDon’t use too many layers without regularization\nDon’t forget to normalize your input!\n\nWhat helps:\n\nNormalize or standardize input\n\nUse dropout or early stopping for regularization\n\nPlot training + validation loss to detect overfitting"
+  }
+]
